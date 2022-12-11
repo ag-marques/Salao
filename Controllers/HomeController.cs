@@ -14,7 +14,12 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
-    {
+    {        
+        ViewData["empresa"]  = "Cíntia Morães Studio";
+        ViewData["endereco"] = "Rua Cinco, 42 - Jardim Encantado - Vespasiano/MG";
+        ViewData["telefone"] = "31 98786-8580";
+        ViewData["desenv"] = "by Anderson Marques";
+
         return View();
     }
 

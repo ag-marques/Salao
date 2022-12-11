@@ -1,0 +1,36 @@
+@model IEnumerable<Salao.Models.Cliente>
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Id_Cliente)</th>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <th>@Html.DisplayNameFor(model => model.Endereco)</th>
+                <th>@Html.DisplayNameFor(model => model.Aniversario)</th>
+                <th>@Html.DisplayNameFor(model => model.DataCad)</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id_Cliente)</td>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Endereco)</td>
+                <td>@Html.DisplayFor(modelItem => item.Aniversario)</td>
+                <td>@Html.DisplayFor(modelItem => item.DataCad)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {/*id_cliente=item.PrimaryKey*/}) |
+                    @Html.ActionLink("Delete", "Delete", new {/*id_cliente=item.PrimaryKey*/})
+
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
